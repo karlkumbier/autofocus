@@ -14,6 +14,6 @@ figure
 imgScaled = imresize(embEdges,[300,600],'nearest');
 maskScaled = imresize(mask,[300,600],'nearest');
 %threshold edge detector responses
-imgThresh(imgThresh<quantile(imgThresh(:),0.9)) = 0; 
-imgFinal = imgThresh.*maskScaled;
+imgScaled(imgScaled<quantile(imgScaled(:),0.9)) = 0; 
+imgFinal = imgScaled.*maskScaled;
 imagesc(imgFinal)
