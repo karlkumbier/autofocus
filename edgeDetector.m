@@ -1,7 +1,7 @@
-function convScore = edgeDetector(img, nAngles)
+function alphas = edgeDetector(img, nAngles)
 
-filtWidth = 15;
-filtSig = 2;
+filtWidth = 150;
+filtSig = 25;
 
 angles = linspace(0,2*pi,nAngles+1);
 angles = angles(1:(end-1));
@@ -27,5 +27,4 @@ for j = 1:nAngles
     meanResp(j) = mean2(alphaFull);
 end
 
-convScore = log(sum(alphas(:)));
 
